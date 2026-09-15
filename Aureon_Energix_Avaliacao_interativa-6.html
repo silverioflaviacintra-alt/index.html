@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Avalie a Aureon Energix</title>
+<style>
+*{box-sizing:border-box}body{margin:0;min-height:100vh;background:#0B2545;
+font-family:Arial,sans-serif;display:flex;justify-content:center;align-items:center;padding:18px}
+.card{width:min(520px,100%);background:#fff;border-radius:22px;padding:30px 24px;
+text-align:center;box-shadow:0 12px 35px #0005}
+h1{color:#0B2545;margin:0 0 8px;font-size:30px}.stars{color:#FFC107;font-size:40px;letter-spacing:3px}
+.sub{color:#536273;margin:10px 0 22px}.btn{display:block;width:100%;border:0;border-radius:12px;
+padding:16px;margin:12px 0;font-weight:bold;font-size:16px;cursor:pointer}
+.google{background:#1FA463;color:white}.copy{background:#2563EB;color:white}
+.comment{text-align:left;background:#EEF4FA;border-radius:12px;padding:17px;color:#222;line-height:1.5}
+.small{font-size:12px;color:#718096;margin-top:15px}
+#status{font-weight:bold;color:#1FA463;min-height:20px}
+</style>
+</head>
+<body>
+<main class="card">
+<h1>Aureon Energix</h1>
+<div class="stars">★ ★ ★ ★ ★</div>
+<div class="sub">Avalie sua experiência em <b>Araraquara</b></div>
+<button class="btn google" onclick="window.open('https://g.page/r/CT4LQe-zXS01EAE/review','_blank')">★ AVALIAR NO GOOGLE</button>
+<div class="comment" id="comment">Excelente experiência com a Aureon Energix em Araraquara! Fui muito bem atendido, com profissionalismo e atenção em cada etapa. Fiquei muito satisfeito com o atendimento e com a qualidade do serviço. Recomendo a Aureon Energix!</div>
+<button class="btn copy" onclick="copiar()">📋 COPIAR SUGESTÃO</button>
+<div id="status"></div>
+<div class="small">Você pode editar a sugestão antes de publicar. A avaliação deve refletir sua experiência real.</div>
+</main>
+<script>
+async function copiar(){
+ const t=document.getElementById('comment').innerText.trim();
+ try{
+   await navigator.clipboard.writeText(t);
+   document.getElementById('status').innerText='✓ Sugestão copiada! Agora é só colar no Google.';
+ }catch(e){
+   const r=document.createRange();r.selectNodeContents(document.getElementById('comment'));
+   const s=window.getSelection();s.removeAllRanges();s.addRange(r);
+   document.getElementById('status').innerText='Selecione e copie o texto acima.';
+ }
+}
+</script>
+</body></html>
